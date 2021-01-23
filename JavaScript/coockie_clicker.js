@@ -21,6 +21,7 @@ function autoclick(){
     autoclickupg = autoclickupg +10;
     costs = costs * 3;
     document.getElementById("costs").innerHTML = costs + "Cookies";
+    document.getElementById("cookie").innerHTML = cookies;
     console.log("Costs: " + costs);
     }
 }
