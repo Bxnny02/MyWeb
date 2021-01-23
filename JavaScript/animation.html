@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-animation</title>
+</head>
+<body>
+    <canvas width="500" height="180" id="mycanvas"></canvas>
+
+
+    <script>
+        canvas = document.getElementById("mycanvas");
+        ctx = canvas.getContext("2d");
+
+        speed1 = 2;
+        speed2 = 2;           //das ist die Schrittweite
+        x1 = 0;                //x-Koordinate des Rechtecks
+        y1 = 20; 
+        x2 = 20;
+        y2= 0;              //y-Koordinate des Rechtecks
+        repeat = 0;           //Anzahl der Zyklen
+        requestID = 123;   
+
+
+        function draw() {
+            ctx.clearRect(0, 0, 500, 60);       //ctx clearen
+            ctx.fillStyle = "yellow";           //ctx Farbe einstellen
+            ctx.fillRect(0, 0, 500, 180);       //ctx füllen
+            ctx.fillStyle = "red";              //Rechteckfüllfarbe einstellen
+            ctx.fillRect(x1, y1, 20, 20);        //Rechteckgröße 20px
+            //console.log(x1, y1, "Hat funktioniert!");
+            ctx.fillStyle = "blue";
+            ctx.fillRect(x2, y2, 20, 20);
+            //console.log(x2, y2, "Hat funktioniert!");
+        }
+
+
+        function animate() {
+            draw();                 //x wird um jeweils 5px erhöht
+            x1 += speed1;             //x läuft von 0 bis 480 und wieder bis 0
+            y2 += speed2;
+            //Kollision mit rechtem oder linken Rand
+            if(x1 <=0 || x1 >= 480){
+                //Vorzeichenumkehr
+                speed1 = -speed1;
+                repeat++;           //Nächster Zyklus
+            }
+            if(y2 <=0 || y2 >= 160){
+                //Vorzeichenumkehr
+                speed2 = -speed2;
+                repeat++;           //Nächster Zyklus
+            }
+        
+        
+        if(repeat==100){
+            draw();                 //Muss nochmals aufgreufen werden damit x=480 noch gezeichnet wird
+            cancelAnimationFrame(requestID);
+            console.log("Cancel Animation");
+        }
+        else{
+            requestID=requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    </script>
+    <br><br>
+    <a href="./JavaScript.html">Zurürck</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <script src="blocky.js"></script>
+</head>
+<body>
+    <h1>Cookie Clicker</h1>
+    <img src="../images/cookie.png"><br>
+    <table>
+        <tr>
+            <td>Anzahl der Cookies:</td><td id="cookie">0</td>
+        </tr>
+    </table>
+    
+    <br>
+
+    <button onclick="getCookie()">Generieren</button>
+    <br><br>
+    <table>
+        <tr>
+            <th>Upgrade</th><th>Kosten</th>
+        </tr>
+        <tr>
+            <td><button onclick="autoclick()">Auto-Click</button></td><td id="costs">10 Cookies</td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<html lang = "de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rechner 2.0</title>
+        <script src="rechner_v2.js"></script>
+    </head>
+    <body>
+        <h1>Der Grundrechner</h1>
+        <form>
+            <table>
+                <tr><td>Zahl 1:</td><td colspan="2"><input size="20" type="number" id="wert1"></td></tr>
+                <tr><td>Zahl 2:</td><td colspan="2"><input type="number" id="wert2"></td></tr>
+                
+                <tr>
+                    <td rowspan="2">Operation:</td>
+                    <td><label><input type="radio" name="op" id="add" value="plus">Addieren</label></td>
+                    <td><label><input type="radio" name="op" id="min" value="minus">Subtrahieren</label></td>
+                </tr>
+
+                <tr>
+                    <td><label><input type="radio" name="op" id="multi" value="multiply">Multiplizieren</label></td>
+                    <td><label><input type="radio" name="op" id="div" value="divide">Dividieren</label></td>
+                </tr>
+
+                <tr>
+                    <td>Ergebnis:</td><td colspan="2"><input type="text" id="ergebnis"></td>
+                </tr>
+
+                <br>
+
+                <tr>
+                    <td></td><td colspan="2"><button type="button" onclick="rechnen()">Berechnen</button>   <button id="clear">Löschen</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
