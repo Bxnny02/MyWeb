@@ -4,6 +4,7 @@ var Click = 1;
 var autoclickupg = 0;
 var ClickIntensityCosts = 10;
 var AutoClickCosts = 10;
+var CookiePack
 
 function getCookie() {
     cookies += Click;
@@ -44,13 +45,17 @@ function AutoClick() {
     }
 }
 
+/* Work in progress :)
 function CookiePack() {
     if (cookies < CookiePackCosts){
         alert("Du hast nicht genug Cookies!");
     }
     else {
         cookies -=CookiePackCosts;
+        AutoClickCosts = AutoClickCosts * 3;
+
 
     }
 }
 
+*/
