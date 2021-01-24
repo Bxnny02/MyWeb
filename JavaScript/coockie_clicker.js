@@ -1,27 +1,56 @@
 var cookies = 0;
-var autoclickupg = 0;
-var costs = 10;
+var Click = 1;
 
-function getCookie(){
-    cookies +=1;
+var autoclickupg = 0;
+var ClickIntensityCosts = 10;
+var AutoClickCosts = 10;
+
+function getCookie() {
+    cookies += Click;
     document.getElementById("cookie").innerHTML = cookies;
 }
 
-setInterval(function(){
+
+setInterval(function AutoClickInt() {
     cookies = cookies + autoclickupg;
     document.getElementById("cookie").innerHTML = cookies;
-}, 3000);
+}, 2000);
 
-function autoclick(){
-    if (cookies < costs){
-        alert("You don´t have enough cookies!");
+
+function ClickIntensity() {
+    if (cookies < ClickIntensityCosts){
+        alert("Du hast nicht genug Cookies!");
     }
     else {
-    cookies -= costs;
-    autoclickupg = autoclickupg +10;
-    costs = costs * 3;
-    document.getElementById("costs").innerHTML = costs + "Cookies";
-    document.getElementById("cookie").innerHTML = cookies;
-    console.log("Costs: " + costs);
+        cookies -= ClickIntensityCosts;
+        document.getElementById("cookie").innerHTML = cookies; 
+        Click +=1;
+        ClickIntensityCosts *=2;
+        document.getElementById("ClickIntensityCosts").innerHTML = ClickIntensityCosts + " Cookies";
     }
 }
+
+function AutoClick() {
+    if (cookies < AutoClickCosts){
+        alert("Du hast nicht genug Cookies!");
+    }
+    else {
+    cookies -= AutoClickCosts;
+    autoclickupg = autoclickupg +10;
+    AutoClickCosts = AutoClickCosts * 2;
+    document.getElementById("AutoClickCosts").innerHTML = AutoClickCosts + " Cookies";
+    document.getElementById("cookie").innerHTML = cookies;
+    console.log("Costs: " + AutoClickCosts);
+    }
+}
+
+function CookiePack() {
+    if (cookies < CookiePackCosts){
+        alert("Du hast nicht genug Cookies!");
+    }
+    else {
+        cookies -=CookiePackCosts;
+
+    }
+}
+

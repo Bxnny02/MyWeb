@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Clicker</title>
     <script src="coockie_clicker.js"></script>
+    <link rel="stylesheet" href="../styles/coockie.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Cookie Clicker</h1>
-    <img src="../images/cookie.png"><br>
-    <table>
-        <tr>
-            <td>Anzahl der Cookies:</td><td id="cookie">0</td>
-        </tr>
-    </table>
-    
-    <br>
+        <div class="center">
+        <h1>Cookie Clicker</h1>
+        <table class="elements">
+            <tr>
+                <td>Anzahl der Cookies:</td><td id="cookie">0</td>
+            </tr>
+        </table>
+        
+        <br>
 
-    <button onclick="getCookie()">Generieren</button>
-    <br><br>
-    <table>
-        <tr>
-            <th>Upgrade</th><th>Kosten</th>
-        </tr>
-        <tr>
-            <td><button onclick="autoclick()">Auto-Click</button></td><td id="costs">10 Cookies</td>
-        </tr>
-    </table>
+        <table class="elements">
+            <tr>
+                <td>
+                    <button class="generate" onclick="getCookie()">Generieren</button>
+                </td>
+            </tr>    
+        </table>
+       
+        <br><br>
 
+        <table class="elements">
+            <tr>
+                <th>Upgrade</th><th>Kosten</th>
+            </tr>
+
+            <tr>
+                <td><button class="upgrade" onclick="ClickIntensity()">Klickstärke</button></td><td id="ClickIntensityCosts">10 Cookies</td>
+            </tr>
+
+            <tr>
+                <td><button class="upgrade" onclick="AutoClick()">Auto-Click</button></td><td id="AutoClickCosts">10 Cookies</td>
+            </tr>
+
+            <tr>
+                <td><button class="upgrade" onclick="CookiePack()">Keckspackung</button></td><td id="CookiePackCosts">50 Cookies</td></tr>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
